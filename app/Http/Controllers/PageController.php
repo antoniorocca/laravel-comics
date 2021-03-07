@@ -1,23 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Comic;
 use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function index()
-    {
-       return view('guests.index'); 
-    }
-
-    public function about()
-    {
-       return view('guests.about'); 
-    }
-
-    public function contacts()
-    {
-       return view('guests.contacts'); 
-    }
+   public function index()
+   {
+      $comics = Comic::all();     
+      return view('guests.index', compact('comics')); 
+   }
 }

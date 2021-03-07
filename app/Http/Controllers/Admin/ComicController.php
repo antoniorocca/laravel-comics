@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use App\Comic;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class ComicController extends Controller
 {
@@ -36,7 +37,27 @@ class ComicController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'availability' => 'required',
+            'description' => 'required',
+            'artists' => 'required',
+            'writers' => 'required',
+            'series' => 'required',
+            'price' => 'required',
+            'sale_date' => 'required',
+            'volume' => 'required',
+            'trim_size' => 'required',
+            'page_count' => 'required',
+            'rated' => 'required',
+            'cover' => 'nullable | mimes:jpg,png,svg | max:300'
+        ]);
+
+        $cover = Storage::put('cover_imgs', $request->cover);
+        $validatedData['cover'] = $cover;
+        Comic::create($validatedData);
+        $new_comic = Comic::orderBy('id', 'desc')->first();
+        return redirect()->route('admin.comics.show', $new_comic);
     }
 
     /**
@@ -70,7 +91,22 @@ class ComicController extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        $validatedData = $request->validate([
+            'title' => 'required',
+            'availability' => 'required',
+            'description' => 'required',
+            'artists' => 'required',
+            'writers' => 'required',
+            'series' => 'required',
+            'price' => 'required',
+            'sale_date' => 'required',
+            'volume' => 'required',
+            'trim_size' => 'required',
+            'page_count' => 'required',
+            'rated' => 'required'
+        ]);       
+        $post->update($validatedData);
+        return redirect()->route('admin.comics.index');
     }
 
     /**
@@ -81,6 +117,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        $comic->delete();
+        return redirect()->route('admin.comics.index');
     }
 }

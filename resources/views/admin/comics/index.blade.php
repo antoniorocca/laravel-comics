@@ -2,7 +2,7 @@
 
 @section('content')
 <h1>All comics for the admin</h1>
-<a href="{{ route('admin.comics.create')}}">Create new post</a>
+<a href="{{ route('admin.comics.create')}}">Create a new comic</a>
 <table class="table">
     <thead>
         <tr>

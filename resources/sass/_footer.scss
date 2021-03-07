@@ -1,0 +1,103 @@
+footer {
+    height: 500px;
+    position: relative;
+    #top-footer {
+        #bg {
+            width: 1349px;
+        }
+        #logo {
+            width: 480px;
+            z-index: 1;
+            position: absolute;
+            bottom: 67px;
+            right: 130px;
+        }
+        #first-list {
+            list-style-type: none;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            z-index: 1;
+            color: white;
+            li {
+                &:first-child {
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                }
+            }
+        }
+        #second-list {
+            list-style-type: none;
+            position: absolute;
+            top: 50px;
+            left: 180px;
+            z-index: 1;
+            color: white;
+            li {
+                &:first-child {
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                }
+            }
+        }
+        #third-list {
+            list-style-type: none;
+            position: absolute;
+            top: 50px;
+            left: 350px;
+            z-index: 1;
+            color: white;
+            li {
+                &:first-child {
+                    font-weight: bold;
+                    margin-bottom: 15px;
+                    font-size: 16px;
+                }
+            }
+        }
+        #footer-txt {
+            position: absolute;
+            top: 340px;
+            left: 50px;
+            z-index: 1;
+            color: white;
+            a {
+            color: rgb(2, 130, 249);
+            }
+        }
+    }
+    #bottom-footer {
+        width: 1349px;
+        height: 100px;
+        z-index: 3;
+        position: absolute;
+        top: 400px;
+        left: 0; 
+        background-color: rgb(24, 24, 24);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+          margin-left: 120px;
+          height: 40px;
+          border: 2px solid rgb(2, 130, 249);
+          color: white;
+          font-weight: bold;
+          background-color: rgb(24, 24, 24);
+        }
+        span {
+            margin-right: 120px;
+            color: white;
+            font-size: 20px;
+            i {
+                padding-right: 10px;
+            }
+            strong {
+                padding-right: 20px;
+                color: rgb(2, 130, 249);
+            }
+        }
+    }
+}

@@ -1,0 +1,50 @@
+h1 {
+    position: absolute;
+    top: 1375px;
+    left: 110px;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 340px;
+    background-color: rgb(2, 130, 249);
+    color: white;
+}
+#series-container {
+    height: 540px;
+    background-color: rgb(28, 28, 28);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .minicard {
+        margin-top: 35px;
+        margin-right: 20px;
+        height: 200px;
+        width: 175px;
+        &:hover {
+            transform: scale(1.1);
+        }
+        img {
+            height: 150px;
+            width: 175px;
+            margin-bottom: 8px;
+        }
+        span {
+             font-size: 12px;
+             font-weight: bold;
+             color: white;
+        }
+    }
+}
+#blue-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    height: 120px;
+    background-color: rgb(2, 130, 249);
+    color: white;
+}
